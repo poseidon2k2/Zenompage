@@ -45,7 +45,7 @@ section{
   z-index: 777;
   content: '';
   position: absolute;
-  background: rgba(50, 116, 84, 0.5);
+  background: rgba(50, 116, 84, 0.3);
   width: 100%;
   height: 100%;
   top: 0;
@@ -152,7 +152,7 @@ header{
 }
 
 
-.home video{
+.img-slide{
   z-index: 000;
   position: absolute;
   top: 0;
@@ -197,14 +197,29 @@ header{
 .video-slide{
   position: absolute;
   width: 100%;
-  clip-path: circle(0% at 0 50%);
+  clip-path: circle(0% at 50% 50%);
 }
 
 .video-slide.active{
-  clip-path: circle(150% at 0 50%);
-  transition: 2s ease;
+  clip-path: circle(150% at 50% 50%);
+  transition: 1.5s cubic-bezier(.04,.29,.7,.33);
   transition-property: clip-path;
 }
+
+.animate {
+  animation: ripple-mo 1s cubic-bezier(0, 0, 0.2, 1);
+}
+@keyframes ripple-mo {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
 
 .about-zenom{
   background: #2e3c2d;
